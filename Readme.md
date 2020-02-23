@@ -1,3 +1,7 @@
+This repository is a demo project for the [Home Assistant](https://www.home-assistant.io/) with Docker. 
+
+
+
 # Requirements
 
 * [Docker](https://docs.docker.com/install/)
