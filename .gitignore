@@ -1,1 +1,5 @@
-config/!*.yml
+config/*.db
+config/*.log
+config/.storage/*
+config/.cloud/*
+config/secrets.yml
