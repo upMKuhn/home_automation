@@ -1,0 +1,32 @@
+
+02_42_ca_46_69_de:
+  hide_if_away: false
+  icon:
+  mac: 02:42:CA:46:69:DE
+  name: 02 42 ca 46 69 de
+  picture:
+  track: true
+
+'02_42_30_42_67_35':
+  hide_if_away: false
+  icon:
+  mac: 02:42:30:42:67:35
+  name: 02 42 30 42 67 35
+  picture:
+  track: true
+
+02_42_62_57_f1_67:
+  hide_if_away: false
+  icon:
+  mac: 02:42:62:57:F1:67
+  name: 02 42 62 57 f1 67
+  picture:
+  track: true
+
+02_42_e0_ee_f8_f5:
+  hide_if_away: false
+  icon:
+  mac: 02:42:E0:EE:F8:F5
+  name: 02 42 e0 ee f8 f5
+  picture:
+  track: true

@@ -6,11 +6,56 @@ default_config:
 # http:
 #   base_url: example.duckdns.org:8123
 
-# Text to speech
-tts:
-  - platform: google_translate
-
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+
+spotify:
+  client_id: 4a5ef45ad9d34c22b382a01295b16cfa
+  client_secret: ef4420afd43e4f65ae06fa917722155e
+
+variable:
+  alarm_clock:
+    value: 'Alarm Clock'
+    restore: true
+
+#vacuum:
+#  - platform: roomba
+#    host: 192.168.1.33
+#    username: 6977C20452216690
+#    password: :1:1582659786:GTDYQASt9gphT2ca
+
+mqtt:
+  broker: mosquitto
+  port: 1883
+#  broker: mqtt.googleapis.com
+#  port: 8883
+#  username: mycloud-260612
+#  password: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1ODU3MDI3NDksImV4cCI6MTU4NTcwNjM0OSwiYXVkIjoibXljbG91ZC0yNjA2MTIifQ.R7t0iuFzffgGrYtoR3EwcUihrRsYTG2DMz9DRgYFy49tqmxh78GKYzIA_arf-MSWqTVuW3V3NBCuu2wwpXIBxe36G-lPY__FnyGv9XqfCRsXX1FaLKhalnti9gHAtWo5_K8xWpUWzYhG5qAMq_qWUTPm_fW7qZFn5nMUteS-0trxsnz7e72ghQQjnYVYb-kyfWsggBJMPwcTHgq6YrHJ6aXnTj1NZzAOJ63yvpZH3YCUlul7tWrHYSOdHekxrv59arAr129hLL5F59ufu0MbMrDCff3QuWJNxAVEb0vBqiDbUvEWruXFk0Imi61VCGRjJMW5NUHqanIqRe7RvXVPtg
+#  client_id: projects/mycloud-260612/locations/us-central1/registries/my-mqtt/devices/HomeAssistant
+#  openssl req -x509 -newkey rsa:2048 -days 3650 -keyout private.pem -nodes -out cert.pem -subj "/CN=unused"
+#  openssl ecparam -genkey -name prime256v1 -noout -out ec_private.pem
+#  openssl ec -in ec_private.pem -pubout -out ec_public.pem 
+#  certificate: /config/.cloud/mqtt/ca.pem
+  client_key: /config/.cloud/mqtt/rsa_private.pem
+  client_cert: /config/.cloud/mqtt/rsa_cert.pem
+  discovery: true 
+  birth_message: 
+    topic: 'devices/HomeAssistant/state' 
+    payload: 'online'
+    qos: 2
+    retain: true
+  will_message: 
+    topic: 'devices/HomeAssistant/state'
+    payload: 'offline'
+    qos: 2
+    retain: true
+
+mqtt_eventstream:
+  publish_topic: devices/HomeAssistant/config
+
+mqtt_statestream:
+  base_topic: devices/HomeAssistant/entities
+  publish_attributes: true
+  publish_timestamps: true

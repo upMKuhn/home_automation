@@ -1,0 +1,6 @@
+[submodule "addons/hass-variables"]
+	path = addons/hass-variables
+	url = git@github.com:rogro82/hass-variables.git
+[submodule "addons/hacs"]
+	path = addons/hacs
+	url = git@github.com:hacs/integration.git
